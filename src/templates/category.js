@@ -3,21 +3,26 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import PostList from '../components/PostList'
+import TitleList from '../components/TitleList'
 
 const Category = props => {
   const { data, pageContext } = props
   const { edges: posts, totalCount } = data.allWordpressPost
   const { title: siteTitle } = data.site.siteMetadata
+  const { siterl: location } = data.site.siteMetadata
+  const { summary: sum } = data.site.siteMetadata
+  const { description: desc } = data.site.siteMetadata
   const { name: category } = pageContext
-  const title = `${totalCount} post${
+/*  const title = `${totalCount} post${
     totalCount === 1 ? '' : 's'
-  } in the “${category}” category`
+  } in the “${category}” category`*/
+  const title = `カテゴリー「${category}」に${totalCount} 件投稿があります`
 
   return (
-    <Layout>
+   <Layout title={siteTitle} location={location} summary={sum} description={desc}>
       <Helmet title={`${category} | ${siteTitle}`} />
-      <PostList posts={posts} title={title} />
-    </Layout>
+      <TitleList posts={posts} title={title} />
+   </Layout>
   )
 }
 
@@ -28,6 +33,9 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteurl
+        summary
+        description
       }
     }
     allWordpressPost(

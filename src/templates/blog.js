@@ -9,10 +9,15 @@ export default class IndexPage extends React.Component {
   render() {
     const { data, pageContext } = this.props
     const { edges: posts } = data.allWordpressPost
+    const { title: siteTitle } = data.site.siteMetadata
+    const { siterl: location } = data.site.siteMetadata
+    const { summary: sum } = data.site.siteMetadata
+    const { description: desc } = data.site.siteMetadata
+
 
     return (
-      <Layout>
-        <PostList posts={posts} title="Latest posts" />
+      <Layout title={siteTitle} location={location} summary={sum} description={desc}>
+        <PostList posts={posts} title="" />
         <Pagination pageContext={pageContext} pathPrefix="/" />
       </Layout>
     )
@@ -42,6 +47,14 @@ export const pageQuery = graphql`
         node {
           ...PostListFields
         }
+      }
+    }
+    site {
+      siteMetadata {
+        title
+        siteurl
+        summary
+        description
       }
     }
   }
