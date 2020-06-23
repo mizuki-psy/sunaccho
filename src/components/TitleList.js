@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 export default class IndexPage extends React.Component {
   render() {
@@ -18,43 +19,21 @@ export default class IndexPage extends React.Component {
               style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
               key={post.id}
             >
-              <Link to={post.path}>
-              <img src={post.featured_media.source_url} />
-              </Link>
               <p>
                 <Link className="has-text-primary" to={post.path}>
                   {post.title}
                 </Link>
                 <span> &bull; </span>
                 <small>
-                  {post.date}
+                  {post.date} 
                 </small>
               </p>
               <div>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: post.excerpt.replace(/<p class="link-more.*/, ''),
-                  }}
-                />
-                <table className="is-narrow"><tr><td>
-                <ul className="taglist">
-                <li><Link className="button is-small" to={post.path}>
-                  続きを読む →
-                </Link></li>
-                </ul>
-                </td><td>
-                  <ul className="taglist">
-                    {post.categories.map(category => (
-                      <li key={`${category.slug}cat`}>
-                        <Link className="button is-small is-warning" to={`/categories/${category.slug}/`}>
-                          {category.name} →
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </td></tr></table>
+                <Link className="button is-small" to={post.path}>
+                  記事を読む →
+                </Link>
               </div>
-            </div>
+            </div> 
           ))}
         </div>
       </section>

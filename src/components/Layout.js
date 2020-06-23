@@ -1,15 +1,25 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import Header from "./header"
+import Footer from "./footer"
+import Main from "./main"
 
-import Navbar from './Navbar'
 import './all.sass'
 
-const TemplateWrapper = ({ children }) => (
-  <div>
-    <Helmet title="Home | Gatsby + WordPress" />
-    <Navbar />
-    <div>{children}</div>
-  </div>
-)
+const Layout = ({ location, title, summary, description, children }) => {
+  return (
+    <React.Fragment>
+      <Header 
+        location={location} 
+        title={title} 
+        summary={summary}
+        description={description}
+        >
+      </Header>
+      <Main>{children}</Main>
+      <Footer></Footer>
+    </React.Fragment>
+  )
+}
 
-export default TemplateWrapper
+export default Layout
