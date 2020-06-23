@@ -32,9 +32,13 @@ PageTemplate.propTypes = {
 
 const Page = ({ data }) => {
   const { wordpressPage: page } = data
+  const { title: siteTitle } = data.site.siteMetadata
+  const { siterl: location } = data.site.siteMetadata
+  const { summary: sum } = data.site.siteMetadata
+  const { description: desc } = data.site.siteMetadata
 
   return (
-    <Layout>
+    <Layout title={siteTitle} location={location} summary={sum} description={desc}>
       <PageTemplate title={page.title} content={page.content} />
     </Layout>
   )
@@ -51,6 +55,14 @@ export const pageQuery = graphql`
     wordpressPage(id: { eq: $id }) {
       title
       content
+    }
+    site {
+      siteMetadata {
+        title
+        siteurl
+        summary
+        description
+      }
     }
   }
 `
