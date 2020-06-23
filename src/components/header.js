@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import { Facebook, Twitter } from 'react-sharingbuttons';
 
 const Header = ( { location, title, summary, description } ) => {
   var burger_click = event => {
@@ -64,15 +65,24 @@ const Header = ( { location, title, summary, description } ) => {
 
 
 
-          <div class="subtitle is-6 has-text-light navbar-brand">
-            {summary}
-            {description}
-          </div>
 
           <div className="navbar-end"></div>
           </div>
         </div>
       </nav>
+        <section className="hero is-primary">
+        <div className="hero-body">
+        <div className="container">
+        <h1>　</h1>
+        <h1>　</h1>
+        <h6>{summary}</h6>
+        <h6>{description}</h6>
+        <Twitter url={location} shareText={title} />
+        <Facebook url={location} />
+
+        </div>
+        </div>
+        </section>
     </header>
   )
 }
