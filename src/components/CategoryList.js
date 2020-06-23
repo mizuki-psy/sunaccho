@@ -10,6 +10,7 @@ const CategoryList = () => (
             name
             path
             slug
+            count
           }
           totalCount
         }
@@ -22,7 +23,7 @@ const CategoryList = () => (
           {data.allWordpressCategory.nodes.map(category => (
             <li key={category.name}>
               <Link to={`/categories/${category.slug}/`}>
-                {category.name}
+                {category.name}　({category.count})
               </Link>
             </li>
           ))}
@@ -33,3 +34,4 @@ const CategoryList = () => (
 )
 
 export default CategoryList
+

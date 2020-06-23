@@ -10,6 +10,7 @@ const TagList = () => (
             name
             path
             slug
+            count
           }
           totalCount
         }
@@ -19,10 +20,10 @@ const TagList = () => (
       <nav>
         <h1>タグ（{data.allWordpressTag.totalCount}）</h1>
         <ul>
-          {data.allWordpressTag.nodes.map(category => (
-            <li key={category.name}>
-              <Link to={`/tags/${category.slug}/`}>
-                {category.name}
+          {data.allWordpressTag.nodes.map(tag => (
+            <li key={tag.name}>
+              <Link to={`/tags/${tag.slug}/`}>
+                {tag.name}　({tag.count})
               </Link>
             </li>
           ))}
