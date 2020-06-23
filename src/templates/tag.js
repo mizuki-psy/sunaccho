@@ -8,13 +8,17 @@ const Tag = props => {
   const { data, pageContext } = props
   const { edges: posts, totalCount } = data.allWordpressPost
   const { title: siteTitle } = data.site.siteMetadata
+  const { siterl: location } = data.site.siteMetadata
+  const { summary: sum } = data.site.siteMetadata
+  const { description: desc } = data.site.siteMetadata
   const { name: tag } = pageContext
-  const title = `${totalCount} post${
+/*  const title = `${totalCount} post${
     totalCount === 1 ? '' : 's'
-  } with the tag ${tag}`
+  } with the tag ${tag}`*/
+  const title = `${totalCount} 件の投稿にタグ「${tag}」が付いています`
 
   return (
-    <Layout>
+   <Layout title={siteTitle} location={location} summary={sum} description={desc}>
       <Helmet title={`${tag} | ${siteTitle}`} />
       <PostList posts={posts} title={title} />
     </Layout>
@@ -28,6 +32,9 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteurl
+        summary
+        description
       }
     }
     allWordpressPost(filter: { tags: { elemMatch: { slug: { eq: $slug } } } }) {
