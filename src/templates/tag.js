@@ -15,7 +15,7 @@ const Tag = props => {
 /*  const title = `${totalCount} post${
     totalCount === 1 ? '' : 's'
   } with the tag ${tag}`*/
-  const title = `${totalCount} 件の投稿にタグ「${tag}」が付いています`
+  const title = `${totalCount} 件の投稿に「${tag}」タグが付いています`
 
   return (
    <Layout title={siteTitle} location={location} summary={sum} description={desc}>
