@@ -1,8 +1,8 @@
 import React from 'react'
-import Helmet from 'react-helmet'
-import Header from "./header"
-import Footer from "./footer"
-import Main from "./main"
+//import Helmet from 'react-helmet'
+import Header from "./Header"
+import Footer from "./Footer"
+import Main from "./Main"
 
 import './all.sass'
 

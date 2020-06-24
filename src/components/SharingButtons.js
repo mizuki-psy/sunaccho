@@ -1,5 +1,4 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import { Facebook, Twitter } from 'react-sharingbuttons';
 
 const SharingButtons = ({ title, url }) => {
