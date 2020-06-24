@@ -5,7 +5,7 @@ const CategoryList = () => (
   <StaticQuery
     query={graphql`
       query {
-        allWordpressCategory {
+        allWordpressCategory (sort: {fields: slug}) {
           nodes {
             name
             path
@@ -34,4 +34,3 @@ const CategoryList = () => (
 )
 
 export default CategoryList
-
