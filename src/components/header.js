@@ -15,6 +15,7 @@ const Header = ( { location, title, summary, description } ) => {
     }
   }
    return (
+
     <header>
       <nav
         className="navbar is-primary is-fixed-top"
@@ -64,7 +65,9 @@ const Header = ( { location, title, summary, description } ) => {
           </div>
         </div>
       </nav>
+
         <section className="hero is-success">
+
         <div className="hero-body">
         <div className="container">
         <h1>　</h1>

@@ -4,6 +4,7 @@ import TagList from '../components/TagList'
 import ShortTitleList from '../components/ShortTitleList'
 import Search from '../components/Search'
 
+
 const Main = ({ children }) => {
   return (
     <main>
@@ -28,6 +29,7 @@ const Main = ({ children }) => {
 				<TagList />
               </div>
               <span>　</span>
+
               <div className="has-background-light">広告</div>
             </div>
           </div>
