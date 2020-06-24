@@ -3,6 +3,9 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
+import SharingButtons from '../components/SharingButtons'
+//import Site from './Site'
+
 
 export const BlogPostTemplate = ({
   content,
@@ -11,7 +14,10 @@ export const BlogPostTemplate = ({
   title,
   date,
   author,
+  path,
+  site,
 }) => {
+  const url = `https://${site.siteurl}` + '/' + path
   return (
     <section className="section">
       <div className="container content">
@@ -26,13 +32,19 @@ export const BlogPostTemplate = ({
                 {date} - posted by{' '}
                 <Link to={`/author/${author.slug}`}>{author.name}</Link>
               </p>
+		<div class="has-text-centered">
+		 <SharingButtons
+		  title={title}
+		  url={url}
+		/>
+		</div>
               {categories && categories.length ? (
                 <div>
-                  <h4>Categories</h4>
+                  <h4>カテゴリー</h4>
                   <ul className="taglist">
                     {categories.map(category => (
                       <li key={`${category.slug}cat`}>
-                        <Link to={`/categories/${category.slug}/`}>
+                        <Link className="button is-small is-warning" to={`/categories/${category.slug}/`}>
                           {category.name}
                         </Link>
                       </li>
@@ -42,7 +54,7 @@ export const BlogPostTemplate = ({
               ) : null}
               {tags && tags.length ? (
                 <div>
-                  <h4>Tags</h4>
+                  <h4>タグ</h4>
                   <ul className="taglist">
                     {tags.map(tag => (
                       <li key={`${tag.slug}tag`}>
@@ -67,9 +79,12 @@ BlogPostTemplate.propTypes = {
 
 const BlogPost = ({ data }) => {
   const { wordpressPost: post } = data
-
+  const { title: siteTitle } = data.site.siteMetadata
+  const { siterl: location } = data.site.siteMetadata
+  const { summary: sum } = data.site.siteMetadata
+  const { description: desc } = data.site.siteMetadata
   return (
-    <Layout>
+      <Layout title={siteTitle} location={location} summary={sum} description={desc}>
       <Helmet title={`${post.title} | Blog`} />
       <BlogPostTemplate
         content={post.content}
@@ -78,6 +93,8 @@ const BlogPost = ({ data }) => {
         title={post.title}
         date={post.date}
         author={post.author}
+	    path={post.slug}
+	    site={data.site.siteMetadata}
       />
     </Layout>
   )
@@ -117,6 +134,14 @@ export const pageQuery = graphql`
       author {
         name
         slug
+      }
+    }
+    site {
+      siteMetadata {
+        title
+        siteurl
+        summary
+        description
       }
     }
   }

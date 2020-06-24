@@ -1,6 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + WordPress Starter',
+    title: 'みずき＠精神科医のブログ',
+    siteurl: 'mizuki-psy.jp',
+//    siteurl: 'wonderful-pare-f7f6a7.netlify.app',
+    summary: '発達障害を持つ女医がこころの病気と健康について語る。',
+    description: 'よりすぐりの正しいことを発信して、どこまでいけるのかチャレンジするブログ',
+    social: {
+      twitter: `mizuki-psy`,
+    },
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -18,18 +25,19 @@ module.exports = {
         useACF: false,
         auth: {},
         // Set to true to debug endpoints on 'gatsby build'
-        verboseOutput: true,
-        includedRoutes:[
-        	"**/users",
-        	"**/pages",
-        	"**/posts",
-        	"**/taxonomies",
-        	"**/categories",
-        	"**/media",
-        	"**/tags",
+        verboseOutput: false,
+        includedRoutes: [
+          "**/categories",
+          "**/posts",
+          "**/pages",
+          "**/media",
+          "**/taxonomies",
+          "**/users",
+          "**/tags",
         ],
       },
     },
+    'gatsby-plugin-twitter',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
@@ -45,3 +53,4 @@ module.exports = {
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
 }
+

@@ -1,46 +1,42 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import React from "react"
+import { StaticQuery, graphql, Link } from "gatsby"
 
-export default class IndexPage extends React.Component {
-  render() {
-    const { posts, title } = this.props
-
-    return (
-          <div>
-            <h1 className="has-text-weight-bold is-size-2">{title}</h1>
-          </div>
-          
-    )
-  }
-}
-
-IndexPage.propTypes = {
-  posts: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string,
-}
-
-export const pageQuery = graphql`
-  fragment PostListFields on wordpress__POST {
-    id
-    title
-    excerpt
-    author {
-      name
-      slug
-      avatar_urls {
-        wordpress_48
+const ShortTitleList = () => (
+  <StaticQuery
+    query={graphql`
+      query {
+       allWordpressPost(filter: {}, limit: 5, sort: {fields: date, order: DESC}) {
+          edges {
+            node {
+              date(formatString: "MMMM DD, YYYY")
+              title
+              slug
+              path
+            }
+          }
+        }
       }
-    }
-    date(formatString: "MMMM DD, YYYY")
-    slug
-    path
-    featured_media {
-      source_url
-    }
-    categories {
-      name
-      slug
-    }
-  }
-`
+    `}
+    render={data => (
+      <nav>
+        <h1>最近の投稿</h1>
+        <ul>
+          {data.allWordpressPost.edges.map(post => (
+            <li key={post.node.title}>
+              <Link to={`/${post.node.slug}/`}>
+                <div class="has-text-right">
+                  <small><span> &bull; </span>
+                  {post.node.date}
+                  </small>
+                </div>
+                <div>{post.node.title}　</div>  
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )}
+  ></StaticQuery>
+)
+
+export default ShortTitleList

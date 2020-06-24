@@ -21,7 +21,7 @@ const Category = props => {
   return (
    <Layout title={siteTitle} location={location} summary={sum} description={desc}>
       <Helmet title={`${category} | ${siteTitle}`} />
-      <TitleList posts={posts} title={title} />
+      <PostList posts={posts} title={title} />
    </Layout>
   )
 }

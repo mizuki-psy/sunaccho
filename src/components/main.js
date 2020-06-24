@@ -1,6 +1,9 @@
 import React from "react"
-import CategoryList from '../templates/CategoryList'
-import showShortTitles from '../templates/showShortTitles'
+import CategoryList from '../components/CategoryList'
+import TagList from '../components/TagList'
+import ShortTitleList from '../components/ShortTitleList'
+import Search from '../components/Search'
+
 
 const Main = ({ children }) => {
   return (
@@ -11,14 +14,22 @@ const Main = ({ children }) => {
             <div className="column is-three-quarters content">{children}</div>
             <div className="column">
               <div className="has-background-light">
-                最近の投稿一覧
-                <showShortTitles></showShortTitles>
+                <Search />
               </div>
-              <span></span>
+              <div><h1>　</h1></div>
               <div className="has-background-light">
-                カテゴリー
-				<CategoryList></CategoryList>
+                <ShortTitleList />
               </div>
+              <span>　</span>
+              <div className="has-background-light">
+				<CategoryList />
+              </div>
+              <span>　</span>
+              <div className="has-background-light">
+				<TagList />
+              </div>
+              <span>　</span>
+
               <div className="has-background-light">広告</div>
             </div>
           </div>

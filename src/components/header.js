@@ -14,8 +14,8 @@ const Header = ( { location, title, summary, description } ) => {
       $target.classList.toggle("is-active")
     }
   }
- 
-  return (
+   return (
+
     <header>
       <nav
         className="navbar is-primary is-fixed-top"
@@ -48,11 +48,6 @@ const Header = ( { location, title, summary, description } ) => {
 
           <div id="navbarSiteMenu" className="navbar-menu">
             <div className="navbar-start">
-              <Link to="/tags/" className="navbar-item">
-                カテゴリー
-              </Link>
-            </div>
-            <div className="navbar-start">
               <Link to="/privacy/" className="navbar-item">
                 プライバシーポリシー
               </Link>
@@ -70,7 +65,9 @@ const Header = ( { location, title, summary, description } ) => {
           </div>
         </div>
       </nav>
-        <section className="hero is-primary">
+
+        <section className="hero is-success">
+
         <div className="hero-body">
         <div className="container">
         <h1>　</h1>
