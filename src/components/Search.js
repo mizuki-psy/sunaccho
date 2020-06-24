@@ -103,6 +103,7 @@ const Search = props => {
     <div className={props.className} focus={focus}>
       <FaSearch />
       <input
+        className="input is-normal"
         type="text"
         placeholder="Search..."
         onFocus={onFocus}
