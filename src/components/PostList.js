@@ -19,7 +19,7 @@ export default class IndexPage extends React.Component {
               key={post.id}
             >
               <Link to={post.path}>
-              <img src={post.featured_media.source_url} />
+              <img src={post.featured_media.source_url} alt={title} />
               </Link>
               <p>
                 <Link className="has-text-primary" to={post.path}>

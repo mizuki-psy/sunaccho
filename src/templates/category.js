@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import PostList from '../components/PostList'
-import TitleList from '../components/TitleList'
+//import TitleList from '../components/TitleList'
 
 const Category = props => {
   const { data, pageContext } = props

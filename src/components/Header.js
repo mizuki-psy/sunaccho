@@ -1,12 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
 import { Facebook, Twitter } from 'react-sharingbuttons';
+import youtube from '../img/yt_logo_rgb_dark.png'
 
 const Header = ( { location, title, summary, description } ) => {
   var burger_click = event => {
     if (event && event.target) {
       var target = event.target
-      if (event.target.tagName == "SPAN") {
+      if (event.target.tagName === "SPAN") {
         target = target.parentNode
       }
       target.classList.toggle("is-active")
@@ -76,7 +77,10 @@ const Header = ( { location, title, summary, description } ) => {
         <h6>{description}</h6>
         <Twitter url={location} shareText={title} />
         <Facebook url={location} />
-
+        &nbsp;&nbsp;
+		<a href="https://www.youtube.com/channel/UCDYBHs0K8leNAJS_MgQwNOg">
+		  <img src={youtube} alt="YouTube" style={{ width: '110px' }} />
+		</a>
         </div>
         </div>
         </section>
