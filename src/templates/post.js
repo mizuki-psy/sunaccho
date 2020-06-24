@@ -17,7 +17,7 @@ export const BlogPostTemplate = ({
   path,
   site,
 }) => {
-  const url = `https://${site.siteurl}` + '/' + path
+  const url = 'https://' + `${site.siteurl}` + '/' + path
   return (
     <section className="section">
       <div className="container content">
