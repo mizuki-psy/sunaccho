@@ -44,10 +44,12 @@ const Header = ( { location, title, summary, description } ) => {
             </a>
           </div>
 
-
-
-
           <div id="navbarSiteMenu" className="navbar-menu">
+	    <div className="navbar-start">
+	      <Link to="/blog-start-jikoshoukai/" className="navbar-item">
+	        自己紹介
+	      </Link>
+	    </div>
             <div className="navbar-start">
               <Link to="/privacy/" className="navbar-item">
                 プライバシーポリシー
