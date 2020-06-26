@@ -46,7 +46,7 @@ const Header = ( { location, title, summary, description } ) => {
 
           <div id="navbarSiteMenu" className="navbar-menu">
 	    <div className="navbar-start">
-	      <Link to="/blog-start-jikoshoukai/" className="navbar-item">
+	      <Link to="/categories/introduction/" className="navbar-item">
 	        自己紹介
 	      </Link>
 	    </div>

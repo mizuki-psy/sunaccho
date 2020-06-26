@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 export default class IndexPage extends React.Component {
   render() {
@@ -15,11 +16,11 @@ export default class IndexPage extends React.Component {
           {posts.map(({ node: post }) => (
             <div
               className="content"
-              style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
+              style={{ border: '1px solid #eaecee', padding: '1em 1em' }}
               key={post.id}
             >
               <Link to={post.path}>
-              <img src={post.featured_media.source_url} alt={title} />
+              <Img fluid={post.featured_media.localFile.childImageSharp.fluid} alt={title} />
               </Link>
               <p>
                 <Link className="has-text-primary" to={post.path}>
@@ -83,7 +84,13 @@ export const pageQuery = graphql`
     slug
     path
     featured_media {
-      source_url
+      localFile {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
     categories {
       name
