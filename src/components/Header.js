@@ -45,46 +45,36 @@ const Header = ( { location, title, summary, description } ) => {
           </div>
 
           <div id="navbarSiteMenu" className="navbar-menu">
-	    <div className="navbar-start">
-	      <Link to="/categories/introduction/" className="navbar-item">
-	        自己紹介
-	      </Link>
-	    </div>
-            <div className="navbar-start">
+	          <div className="navbar-end">
+	            <Link to="/categories/introduction/" className="navbar-item">
+	              自己紹介
+	            </Link>
               <Link to="/privacy/" className="navbar-item">
                 プライバシーポリシー
               </Link>
-            </div>
-            <div className="navbar-start">
               <Link to="/contact/" className="navbar-item">
                 お問い合わせ
               </Link>
             </div>
-
-
-
-
-          <div className="navbar-end"></div>
           </div>
         </div>
       </nav>
 
         <section className="hero is-success">
-
-        <div className="hero-body">
-        <div className="container">
-        <h1>　</h1>
-        <h1>　</h1>
-        <h6>{summary}</h6>
-        <h6>{description}</h6>
-        <Twitter url={location} shareText={title} />
-        <Facebook url={location} />
-        &nbsp;&nbsp;
-		<a href="https://www.youtube.com/channel/UCDYBHs0K8leNAJS_MgQwNOg">
-		  <img src={youtube} alt="YouTube" style={{ width: '110px' }} />
-		</a>
-        </div>
-        </div>
+          <div className="hero-body">
+            <div className="container">
+              <h1>　</h1>
+              <h1>　</h1>
+              <h6>{summary}</h6>
+              <h6>{description}</h6>
+              <Twitter url={location} shareText={title} />
+              <Facebook url={location} />
+              &nbsp;&nbsp;
+		          <a href="https://www.youtube.com/channel/UCDYBHs0K8leNAJS_MgQwNOg">
+		            <img src={youtube} alt="YouTube" style={{ width: '110px' }} />
+		          </a>
+            </div>
+          </div>
         </section>
     </header>
   )
