@@ -62,7 +62,13 @@ export const pageQuery = graphql`
     slug
     path
     featured_media {
-      source_url
+      localFile {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
     categories {
       name
