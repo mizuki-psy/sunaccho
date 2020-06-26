@@ -22,9 +22,10 @@ export default class IndexPage extends React.Component {
               <Link to={post.path}>
               <Img fluid={post.featured_media.localFile.childImageSharp.fluid} alt={title} />
               </Link>
+              <br/>
               <p>
                 <Link className="has-text-primary" to={post.path}>
-                  {post.title}
+                  <strong>{post.title}</strong>
                 </Link>
                 <span> &bull; </span>
                 <small>

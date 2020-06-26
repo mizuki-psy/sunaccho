@@ -5,38 +5,35 @@ const Pagination = ({ pageContext, pathPrefix }) => {
   const { numberOfPages, previousPagePath, nextPagePath } = pageContext
   const lastPage = '/page/' + `${numberOfPages}`
   return (
-    <nav className="pagination" role="navigation">
-      <div className="navbar navbar-menu">
+    <section class="hero">
+     <div class="hero-foot">
+      <div class="container has-text-centered">
         {previousPagePath && (
-          <div className="navbar-item">
             <Link class="button is-warning" to="/" rel="prev">
               ＜＜
             </Link>
-          </div>
         )}
+        &nbsp;&nbsp;
         {previousPagePath && (
-          <div className="navbar-item">
             <Link class="button is-warning" to={previousPagePath} rel="prev">
               ＜
             </Link>
-          </div>
         )}
+        &nbsp;&nbsp;
         {nextPagePath && (
-          <div className="navbar-item">
             <Link class="button is-warning" to={nextPagePath} rel="next">
               ＞
             </Link>
-          </div>
         )}
+        &nbsp;&nbsp;
         {nextPagePath && (
-          <div className="navbar-item">
             <Link class="button is-warning" to={lastPage} rel="next">
               ＞＞
             </Link>
-          </div>
         )}
       </div>
-    </nav>
+     </div>
+    </section>
   )
 }
 
