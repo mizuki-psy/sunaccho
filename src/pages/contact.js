@@ -8,8 +8,8 @@ const ContactPage = () => (
     summary="発達障害を持つ女医がこころの病気と健康について語る。" 
     description="よりすぐりの正しいことを発信して、どこまでいけるのかチャレンジするブログ"
   >
-    <h1>Contact Form</h1>
-    <p>メールフォーム送信テスト</p>
+    <h1>お問い合わせページ</h1>
+    <p>メールフォーム</p>
     <form 
       name="contact" 
       method="POST" 
@@ -19,28 +19,70 @@ const ContactPage = () => (
     <input type="hidden" name="form-name" value="contact" />
     <input type="hidden" name="bot-field" />
 
-      <div className="form-group">
-        <label>お名前<abbr title="required">*</abbr>
-        <input type="text" className="form-control" id="name" name="name" placeholder="お名前" maxlength="30" minlength="2" required autocomplete="name" />
-        </label>
+      <div className="field">
+        <label className="label">お名前<abbr title="required">*</abbr></label>
+        <div className="control">
+        <input type="text" className="input" id="name" name="name" placeholder="お名前" maxlength="30" minlength="2" required autocomplete="name" />
+        </div>
       </div>
-      <div className="form-group">
-        <label>メールアドレス<abbr title="required">*</abbr>
-        <input type="email" className="form-control" id="email" name="email" placeholder="" pattern="^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required autocomplete="email" />
-        </label>
+      <div className="field">
+        <label>メールアドレス<abbr title="required">*</abbr></label>
+        <div className="control has-icons-left has-icons-right">
+          <input type="email" className="input is-danger" id="email" name="email" placeholder="" pattern="^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required autocomplete="email" />
+        </div>
       </div>
-      <div className="form-group">
-        <label>お問い合わせ内容<abbr title="required">*</abbr>
-        <textarea className="form-control" id="contact" name="content" cols="40" rows="20" required></textarea>
-        </label>
+      <div className="field">
+        <label>お問い合わせ内容<abbr title="required">*</abbr></label>
+        <div className="control">
+          <textarea className="textarea" id="contact" name="content" cols="40" rows="20" required></textarea>
+        </div>
       </div>
 
-      <div className="form-group">
-      <button type="submit">送信</button>
+      <div class="field">
+        <div class="control">
+          <label>
+          当サイトの <a href="https://mizuki-psy.jp/privacy/" target="_blank">プライバシーポリシー</a>同意します。<br />
+          </label>
+          <label class="radio">
+            <input type="radio" name="question" />
+            はい
+          </label>
+          <label class="radio">
+            <input type="radio" name="question" />
+            いいえ
+          </label>
+        </div>
       </div>
+
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="button is-link">送信</button>
+        </div>
+        <div class="control">
+          <button class="button is-light is-link">キャンセル</button>
+        </div>
+      </div>
+
+
     </form>
-    <Link to="/">home</Link>
+    <h3>&nbsp;</h3>
+    <Link to="/">ホームへ</Link>
   </Layout>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 )
 
 export default ContactPage

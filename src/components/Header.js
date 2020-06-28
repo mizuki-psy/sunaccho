@@ -46,7 +46,7 @@ const Header = ( { location, title, summary, description } ) => {
 
           <div id="navbarSiteMenu" className="navbar-menu">
 	          <div className="navbar-end">
-	            <Link to="/categories/introduction/" className="navbar-item">
+	            <Link to="/categories/z-3/" className="navbar-item">
 	              自己紹介
 	            </Link>
               <Link to="/privacy/" className="navbar-item">
