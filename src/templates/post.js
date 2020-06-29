@@ -29,6 +29,7 @@ export const BlogPostTemplate = ({
               {title}
             </h1>
             <Img fluid={featured_image.fluid} alt={title} />
+	    <h4>&nbsp;</h4>
             <div dangerouslySetInnerHTML={{ __html: content }} />
             <div style={{ marginTop: `4rem` }}>
               <p>
