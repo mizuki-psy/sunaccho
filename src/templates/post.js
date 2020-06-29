@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import SharingButtons from '../components/SharingButtons'
+import Img from 'gatsby-image'
 //import Site from './Site'
 
 
@@ -15,6 +16,7 @@ export const BlogPostTemplate = ({
   date,
   author,
   path,
+  featured_image,
   site,
 }) => {
   const url = 'https://' + `${site.siteurl}` + '/' + path
@@ -26,6 +28,7 @@ export const BlogPostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
+            <Img fluid={featured_image.fluid} alt={title} />
             <div dangerouslySetInnerHTML={{ __html: content }} />
             <div style={{ marginTop: `4rem` }}>
               <p>
@@ -94,6 +97,7 @@ const BlogPost = ({ data }) => {
         date={post.date}
         author={post.author}
 	    path={post.slug}
+	    featured_image={post.featured_media.localFile.childImageSharp}
 	    site={data.site.siteMetadata}
       />
     </Layout>
@@ -134,6 +138,15 @@ export const pageQuery = graphql`
       author {
         name
         slug
+      }
+      featured_media {
+        localFile {
+          childImageSharp {
+            fluid(maxWidth: 1000) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
     site {
