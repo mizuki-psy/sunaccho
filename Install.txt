@@ -1,0 +1,56 @@
+インストール手順
+
+
+% gatsby new Project名 https://github.com/GatsbyCentral/gatsby-starter-wordpress
+
+を実行する。
+
+
+found 897 vulnerabilities (879 low, 8 moderate, 10 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+info Initialising git in sunaccho_2
+Initialized empty Git repository in /Users/sugimoto/Documents/GitHub/sunaccho_2/.git/
+info Create initial git commit in sunaccho_2
+info
+Your new Gatsby site has been successfully bootstrapped. Start developing it by running:
+
+  cd sunaccho_2
+  gatsby develop
+
+上記メッセージが出る。
+見ると、879のvulnerabilityがあって、そのうち１０はhighということなので
+一旦プロジェクトのディレクトリに入って
+% cd Project名
+
+推奨されているコマンドを入れて修正する。
+
+% npm audit fix
+
+追加のプラグイン等をインストールする。
+% npm install --save react-icons 
+
+% npm install --save react-sharingbuttons
+
+% npm install --save gatsby-image
+
+% npm install --save gatsby-plugin-twitter
+
+% npm install --save gatsby-plugin-catch-links
+
+% npm install --save gatsby-plugin-google-adsense
+
+found 14 vulnerabilities (12 low, 2 moderate)
+  run `npm audit fix` to fix them, or `npm audit` for details
+
+最終、2 moderate vulnerabilitiesがあるとのことなので、もう一度修正コマンドを実行する。
+
+% npm audit fix
+
+
+
+
+
+% cp ../sunaccho/gatsby-config.js ./
+% cp ../sunaccho/gatsby-browser.js ./
+% cp -pr ../sunaccho/src ./
+
