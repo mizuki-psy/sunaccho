@@ -37,13 +37,6 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        output: `/sitemap.xml`,
-        exclude: [`/contact`,`/404`],
-      }
-    },
     'gatsby-plugin-twitter',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
