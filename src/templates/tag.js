@@ -19,7 +19,7 @@ const Tag = props => {
 
   return (
    <Layout title={siteTitle} location={location} summary={sum} description={desc}>
-      <Helmet title={`${tag} | ${siteTitle}`} />
+      <Helmet title={`${tag}`} />
       <PostList posts={posts} title={title} />
     </Layout>
   )

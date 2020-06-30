@@ -20,7 +20,7 @@ const Category = props => {
 
   return (
    <Layout title={siteTitle} location={location} summary={sum} description={desc}>
-      <Helmet title={`${category} | ${siteTitle}`} />
+      <Helmet title={`${category}`} />
       <PostList posts={posts} title={title} />
    </Layout>
   )

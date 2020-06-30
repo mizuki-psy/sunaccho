@@ -89,7 +89,7 @@ const BlogPost = ({ data }) => {
   const { description: desc } = data.site.siteMetadata
   return (
       <Layout title={siteTitle} location={location} summary={sum} description={desc}>
-      <Helmet title={`${post.title} | Blog`} />
+      <Helmet title={`${post.title}`} />
       <BlogPostTemplate
         content={post.content}
         categories={post.categories}
