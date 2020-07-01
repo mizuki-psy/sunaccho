@@ -10,7 +10,7 @@ export default class IndexPage extends React.Component {
     const { data, pageContext } = this.props
     const { edges: posts } = data.allWordpressPost
     const { title: siteTitle } = data.site.siteMetadata
-    const { siteurl: location } = data.site.siteMetadata
+    const { siteUrl: location } = data.site.siteMetadata
     const { summary: sum } = data.site.siteMetadata
     const { description: desc } = data.site.siteMetadata
 
@@ -54,7 +54,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        siteurl
+        siteUrl
         summary
         description
       }

@@ -19,7 +19,7 @@ export const BlogPostTemplate = ({
   featured_image,
   site,
 }) => {
-  const url = 'https://' + `${site.siteurl}` + '/' + path
+  const url = 'https://' + `${site.siteUrl}` + '/' + path
   return (
     <section className="section">
       <div className="container content">
@@ -153,7 +153,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        siteurl
+        siteUrl
         summary
         description
       }
