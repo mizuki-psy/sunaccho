@@ -50,6 +50,7 @@ found 14 vulnerabilities (12 low, 2 moderate)
 
 
 
+ads.txt は　./static　に入れる。
 
 
 % cp ../sunaccho/gatsby-config.js ./
