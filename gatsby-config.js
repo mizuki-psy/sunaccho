@@ -57,12 +57,6 @@ module.exports = {
         purgeOnly: ['/all.sass'],
       },
     }, // must be after other CSS plugins
-    {
-      resolve: `gatsby-plugin-google-adsense`,
-      options: {
-        publisherId: `ca-pub-7562585991699278`
-      },
-    },
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
 }
