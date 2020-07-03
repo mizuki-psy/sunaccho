@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: 'みずき＠精神科医のブログ',
-    siteUrl: `https://mizuki-psy.jp`,
-//    siteUrl: 'wonderful-pare-f7f6a7.netlify.app',
+    siteUrl: 'https://mizuki-psy.jp',
+//    siteurl: 'wonderful-pare-f7f6a7.netlify.app',
     summary: '発達障害を持つ女医がこころの病気と健康について語る。',
     description: 'よりすぐりの正しいことを発信して、どこまでいけるのかチャレンジするブログ',
     social: {
@@ -37,16 +37,41 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `ads`,
+        path: `${__dirname}/static/ads/`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-rehype`,
+      options: {
+        // Condition for selecting an existing GrapghQL node (optional)
+        // If not set, the transformer operates on file nodes.
+        filter: node => node.internal.type === `GhostPost`,
+        // Only needed when using filter (optional, default: node.html)
+        // Source location of the html to be transformed
+        source: node => node.html,
+        // Additional fields of the sourced node can be added here (optional)
+        // These fields are then available on the htmlNode on `htmlNode.context`
+        contextFields: [],
+        // Fragment mode (optional, default: true)
+        fragment: true,
+        // Space mode (optional, default: `html`)
+        space: `html`,
+        // EmitParseErrors mode (optional, default: false)
+        emitParseErrors: false,
+        // Verbose mode (optional, default: false)
+        verbose: false,
+        // Plugins configs (optional but most likely you need one)
+        plugins: [],
+      },
+    },
+
     'gatsby-plugin-twitter',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    'gatsby-plugin-catch-links',
-    {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        exclude: ["/contact"],
-      }
-    },
     {
       // Removes unused css rules
       resolve:'gatsby-plugin-purgecss',
@@ -57,6 +82,12 @@ module.exports = {
         purgeOnly: ['/all.sass'],
       },
     }, // must be after other CSS plugins
+    {
+      resolve: `gatsby-plugin-google-adsense`,
+      options: {
+        publisherId: `ca-pub-7562585991699278`
+      },
+    },
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
 }
