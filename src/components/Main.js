@@ -3,7 +3,7 @@ import CategoryList from '../components/CategoryList'
 import TagList from '../components/TagList'
 import ShortTitleList from '../components/ShortTitleList'
 import Search from '../components/Search'
-
+import AdsList from '../components/AdsList'
 
 const Main = ({ children }) => {
   return (
@@ -29,6 +29,9 @@ const Main = ({ children }) => {
 				<TagList />
               </div>
               <span>　</span>
+              <div className="has-background-light">
+                 <AdsList />
+              </div>
             </div>
           </div>
         </div>
