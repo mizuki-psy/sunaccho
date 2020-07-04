@@ -13,7 +13,6 @@ const SearchResult = props => {
             date(formatString: "YYYY-MM-DD")
             title
             slug
-            content
           }
         }
       }
@@ -53,7 +52,6 @@ const SearchResult = props => {
     const temp = data.filter(e => {
       const target = `
         ${e.title.toLowerCase()}
-        ${e.content.toLowerCase()}
       `
       return target.indexOf(value) !== -1
     })
