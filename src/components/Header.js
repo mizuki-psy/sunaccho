@@ -49,7 +49,8 @@ const Header = ( { location, title, summary, description } ) => {
 	            <Link to="/categories/z-3/" className="navbar-item">
 	              自己紹介
 	            </Link>
-             <Link to="/privacy/" className="navbar-item">
+
+              <Link to="/privacy/" className="navbar-item">
                 プライバシーポリシー
               </Link>
               <Link to="/contact/" className="navbar-item">
