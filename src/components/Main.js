@@ -26,9 +26,6 @@ const Main = ({ children }) => {
 				<TagList />
               </div>
               <span>　</span>
-              <div className="has-background-light">
-                 <AdsList />
-              </div>
             </div>
           </div>
         </div>
