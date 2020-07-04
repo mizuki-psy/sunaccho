@@ -15,6 +15,10 @@ const Main = ({ children }) => {
             <div className="column">
               <div><h1>　</h1></div>
               <div className="has-background-light">
+                <Search />
+              </div>
+              <span>　</span>
+              <div className="has-background-light">
                 <ShortTitleList />
               </div>
               <span>　</span>
