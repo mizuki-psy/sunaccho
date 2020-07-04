@@ -19,7 +19,7 @@ export const BlogPostTemplate = ({
   featured_image,
   site,
 }) => {
-  const url = 'https://' + `${site.siteUrl}` + '/' + path
+  const url = `${site.siteUrl}` + '/' + path
   return (
     <section className="section">
       <div className="container content">
