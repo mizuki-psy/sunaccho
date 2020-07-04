@@ -13,9 +13,6 @@ const Main = ({ children }) => {
           <div className="columns">
             <div className="column is-three-quarters content">{children}</div>
             <div className="column">
-              <div className="has-background-light">
-                <Search />
-              </div>
               <div><h1>　</h1></div>
               <div className="has-background-light">
                 <ShortTitleList />
