@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import PostList from '../components/PostList'
 import Pagination from '../components/Pagination'
+import SEO from '../components/seo'
 
 export default class IndexPage extends React.Component {
   render() {
@@ -17,7 +18,7 @@ export default class IndexPage extends React.Component {
 
     return (
       <Layout title={siteTitle} location={location} summary={sum} description={desc}>
-
+        <SEO />
         <PostList posts={posts} title="" />
 
         <Pagination pageContext={pageContext} pathPrefix="/" />

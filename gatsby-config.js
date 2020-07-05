@@ -5,6 +5,7 @@ module.exports = {
 //    siteurl: 'wonderful-pare-f7f6a7.netlify.app',
     summary: '発達障害を持つ女医がこころの病気と健康について語る。',
     description: 'よりすぐりの正しいことを発信して、どこまでいけるのかチャレンジするブログ',
+    image: "/img/profile.png",
     social: {
       twitter: `mizuki-psy`,
     },

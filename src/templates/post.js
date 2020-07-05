@@ -5,8 +5,7 @@ import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import SharingButtons from '../components/SharingButtons'
 import Img from 'gatsby-image'
-//import Site from './Site'
-
+import SEO from '../components/seo'
 
 export const BlogPostTemplate = ({
   content,
@@ -89,6 +88,10 @@ const BlogPost = ({ data }) => {
   const { description: desc } = data.site.siteMetadata
   return (
       <Layout title={siteTitle} location={location} summary={sum} description={desc}>
+      <SEO
+        title={post.title}
+        image={post.featured_media.localFile.childImageSharp}
+      />
       <Helmet title={`${post.title}`} />
       <BlogPostTemplate
         content={post.content}

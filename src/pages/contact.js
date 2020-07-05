@@ -1,18 +1,24 @@
 import React from 'react'
-import { Link } from 'gatsby'
-
+import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 
-const ContactPage = () => (
-  <Layout title="みずき＠精神科医のブログ" 
-    summary="発達障害を持つ女医がこころの病気と健康について語る。" 
-    description="よりすぐりの正しいことを発信して、どこまでいけるのかチャレンジするブログ"
+class ContactPage extends React.Component {
+  render() {
+    const { data } = this.props
+    const siteTitle = data.site.siteMetadata.title
+    const sum = data.site.siteMetadata.summary
+    const desc = data.site.siteMetadata.description
+    return (
+  <Layout
+    title={siteTitle}
+    summary={sum}
+    description={desc}
   >
     <h1>お問い合わせページ</h1>
     <p>メールフォーム</p>
-    <form 
-      name="contact" 
-      method="POST" 
+    <form
+      name="contact"
+      method="POST"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
     >
@@ -68,21 +74,20 @@ const ContactPage = () => (
     <h3>&nbsp;</h3>
     <Link to="/">ホームへ</Link>
   </Layout>
-  
+)}}
 
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-)
+  export const pageQuery = graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          siteUrl
+          summary
+          description
+        }
+      }
+    }
+  `
 
 export default ContactPage

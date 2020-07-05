@@ -18,6 +18,7 @@ const SEO = ({ description, lang, meta, title }) => {
           siteMetadata {
             title
             description
+            image
             social {
               twitter
             }
@@ -52,6 +53,10 @@ const SEO = ({ description, lang, meta, title }) => {
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          name: `image`,
+          content: site.siteMetadata.image,
         },
         {
           name: `twitter:card`,
