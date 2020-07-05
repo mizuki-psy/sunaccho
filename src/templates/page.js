@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import SEO from '../components/seo'
 
 export const PageTemplate = ({ title, content }) => {
   return (
@@ -39,6 +40,7 @@ const Page = ({ data }) => {
 
   return (
     <Layout title={siteTitle} location={location} summary={sum} description={desc}>
+      <SEO />
       <PageTemplate title={page.title} content={page.content} />
     </Layout>
   )
