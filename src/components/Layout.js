@@ -3,14 +3,12 @@ import React from 'react'
 import Header from "./Header"
 import Footer from "./Footer"
 import Main from "./Main"
-import SEO from "./seo"
 
 import './all.sass'
 
 const Layout = ({ location, title, summary, description, children }) => {
   return (
     <React.Fragment>
-      <SEO title={title} />
       <Header
         location={location}
         title={title}

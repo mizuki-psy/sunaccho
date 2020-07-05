@@ -23,11 +23,11 @@ const Main = ({ children }) => {
               </div>
               <span>　</span>
               <div className="has-background-light">
-				<CategoryList />
+				        <CategoryList />
               </div>
               <span>　</span>
               <div className="has-background-light">
-				<TagList />
+				        <TagList />
               </div>
               <span>　</span>
             </div>
