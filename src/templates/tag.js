@@ -1,5 +1,4 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import PostList from '../components/PostList'
@@ -20,8 +19,9 @@ const Tag = props => {
 
   return (
    <Layout title={siteTitle} location={location} summary={sum} description={desc}>
-      <Helmet title={`${tag}`} />
-      <SEO />
+      <SEO
+        title={`${tag}`}
+      />
       <PostList posts={posts} title={title} />
     </Layout>
   )

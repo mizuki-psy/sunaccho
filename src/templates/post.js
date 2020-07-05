@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import SharingButtons from '../components/SharingButtons'
@@ -28,19 +27,19 @@ export const BlogPostTemplate = ({
               {title}
             </h1>
             <Img fluid={featured_image.fluid} alt={title} />
-	    <h4>&nbsp;</h4>
+	          <h4>&nbsp;</h4>
             <div dangerouslySetInnerHTML={{ __html: content }} />
             <div style={{ marginTop: `4rem` }}>
               <p>
                 {date} - posted by{' '}
                 <Link to={`/author/${author.slug}`}>{author.name}</Link>
               </p>
-		<div class="has-text-centered">
-		 <SharingButtons
-		  title={title}
-		  url={url}
-		/>
-		</div>
+		        <div class="has-text-centered">
+		        <SharingButtons
+		          title={title}
+	        	  url={url}
+	        	/>
+		        </div>
               {categories && categories.length ? (
                 <div>
                   <h4>カテゴリー</h4>
@@ -83,7 +82,7 @@ BlogPostTemplate.propTypes = {
 const BlogPost = ({ data }) => {
   const { wordpressPost: post } = data
   const { title: siteTitle } = data.site.siteMetadata
-  const { siterl: location } = data.site.siteMetadata
+  const { siteUrl: location } = data.site.siteMetadata
   const { summary: sum } = data.site.siteMetadata
   const { description: desc } = data.site.siteMetadata
   return (
@@ -92,7 +91,6 @@ const BlogPost = ({ data }) => {
         title={post.title}
         image={post.featured_media.localFile.childImageSharp}
       />
-      <Helmet title={`${post.title}`} />
       <BlogPostTemplate
         content={post.content}
         categories={post.categories}
