@@ -1,10 +1,16 @@
 import React from 'react'
 import Layout from '../components/Layout'
 
-const NotFoundPage = () => (
-  <Layout title="みずき＠精神科医のブログ" 
-    summary="発達障害を持つ女医がこころの病気と健康について語る。" 
-    description="よりすぐりの正しいことを発信して、どこまでいけるのかチャレンジするブログ"
+class NotFoundPage extends React.Component {
+  render() {
+    const { data } = this.props
+    const siteTitle = data.site.siteMetadata.title
+    const sum = data.site.siteMetadata.summary
+    const desc = data.site.siteMetadata.description
+    return (
+  <Layout title={siteTitle}
+    summary={sum} 
+    description={desc}
   >
     <div>
       <h1></h1>
@@ -13,6 +19,19 @@ const NotFoundPage = () => (
       <p>お探しのページは見つかりません。</p>
     </div>
   </Layout>
-)
+)}}
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+        siteUrl
+        summary
+        description
+      }
+    }
+  }
+`
 
 export default NotFoundPage
