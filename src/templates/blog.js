@@ -18,7 +18,9 @@ export default class IndexPage extends React.Component {
 
     return (
       <Layout title={siteTitle} location={location} summary={sum} description={desc}>
-        <SEO />
+        <SEO
+          title={siteTitle}
+        />
         <PostList posts={posts} title="" />
 
         <Pagination pageContext={pageContext} pathPrefix="/" />
