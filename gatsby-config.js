@@ -69,16 +69,15 @@ module.exports = {
         plugins: [],
       },
     },
-	{
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        start_url: `/`,
-        lang: `ja`,
-        icon: 'src/img/utatan.png', // This path is relative to the root of the site.
-        include_favicon: false, // This will exclude favicon link tag
-      },
-
-	},
+//	{
+//      resolve: `gatsby-plugin-manifest`,
+//      options: {
+//        start_url: `/`,
+//        lang: `ja`,
+//        icon: 'src/img/utatan.png', // This path is relative to the root of the site.
+//        include_favicon: true, // This will exclude favicon link tag
+//      },
+//	},
     'gatsby-plugin-twitter',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
