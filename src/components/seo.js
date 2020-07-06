@@ -23,12 +23,12 @@ function SEO({ description, lang, meta, image: metaImage, title, pathname }) {
     `
   )
 
-  const metaDescription = description //|| site.siteMetadata.description
-  const image =
-    metaImage && metaImage.src
-      ? `${site.siteMetadata.siteUrl}${metaImage.src}`
-      : null
-//  const image = metaImage || site.siteMetadata.siteUrl + site.siteMetadata.image
+  const metaDescription = description || site.siteMetadata.description
+//  const image =
+//    metaImage && metaImage.src
+//      ? `${site.siteMetadata.siteUrl}${metaImage.src}`
+//      : null
+  const image = metaImage || site.siteMetadata.siteUrl + site.siteMetadata.image
 //  const image = site.siteMetadata.siteUrl + site.siteMetadata.image
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
 
