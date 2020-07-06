@@ -75,7 +75,7 @@ module.exports = {
         start_url: `/`,
         lang: `ja`,
         icon: 'src/img/utatan.png', // This path is relative to the root of the site.
-        include_favicon: false, // This will exclude favicon link tag
+        include_favicon: true, // This will exclude favicon link tag
       },
 
 	},
