@@ -69,7 +69,7 @@ module.exports = {
         plugins: [],
       },
     },
-	{
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         start_url: `/`,
@@ -77,8 +77,7 @@ module.exports = {
         icon: 'src/img/utatan.png', // This path is relative to the root of the site.
         include_favicon: true, // This will exclude favicon link tag
       },
-
-	},
+    },
     'gatsby-plugin-twitter',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
