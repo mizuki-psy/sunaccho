@@ -15,11 +15,17 @@ export const BlogPostTemplate = ({
   author,
   path,
   featured_image,
+  excerpt,
   site,
 }) => {
   const url = `${site.siteUrl}` + '/' + path
   return (
     <section className="section">
+      <SEO
+        title={title}
+        image={featured_image.fluid}
+        description={excerpt}
+      />
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
@@ -85,24 +91,22 @@ const BlogPost = ({ data }) => {
   const { siteUrl: location } = data.site.siteMetadata
   const { summary: sum } = data.site.siteMetadata
   const { description: desc } = data.site.siteMetadata
+  const image = post.featured_media.localFile.childImageSharp
   return (
       <Layout title={siteTitle} location={location} summary={sum} description={desc}>
-      <SEO
-        title={post.title}
-        image={post.featured_media.localFile.childImageSharp}
-      />
-      <BlogPostTemplate
-        content={post.content}
-        categories={post.categories}
-        tags={post.tags}
-        title={post.title}
-        date={post.date}
-        author={post.author}
-	    path={post.slug}
-	    featured_image={post.featured_media.localFile.childImageSharp}
-	    site={data.site.siteMetadata}
-      />
-    </Layout>
+        <BlogPostTemplate
+          content={post.content}
+          categories={post.categories}
+          tags={post.tags}
+          title={post.title}
+          date={post.date}
+          author={post.author}
+	      path={post.slug}
+	      featured_image={post.featured_media.localFile.childImageSharp}
+          excerpt={post.excerpt}
+	      site={data.site.siteMetadata}
+        />
+      </Layout>
   )
 }
 
@@ -118,6 +122,7 @@ export const pageQuery = graphql`
   fragment PostFields on wordpress__POST {
     id
     slug
+    excerpt
     content
     date(formatString: "MMMM DD, YYYY")
     title
@@ -144,7 +149,7 @@ export const pageQuery = graphql`
       featured_media {
         localFile {
           childImageSharp {
-            fluid(maxWidth: 1000) {
+            fluid(maxWidth: 480) {
               ...GatsbyImageSharpFluid
             }
           }

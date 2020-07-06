@@ -7,7 +7,7 @@ module.exports = {
     description: 'よりすぐりの正しいことを発信して、どこまでいけるのかチャレンジするブログ',
     image: "/img/profile.png",
     social: {
-      twitter: `mizuki-psy`,
+      twitter: `@mizuki-psy`,
     },
   },
   plugins: [
