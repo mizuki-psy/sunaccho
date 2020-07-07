@@ -23,7 +23,7 @@ export const BlogPostTemplate = ({
     <section className="section">
       <SEO
         title={title}
-        image={featured_image.fluid}
+        image={featured_image.fluid.src}
         description={excerpt}
       />
       <div className="container content">
@@ -122,7 +122,6 @@ export const pageQuery = graphql`
   fragment PostFields on wordpress__POST {
     id
     slug
-    excerpt
     content
     date(formatString: "MMMM DD, YYYY")
     title
@@ -132,6 +131,7 @@ export const pageQuery = graphql`
       id
       title
       slug
+      excerpt
       content
       date(formatString: "MMMM DD, YYYY")
       categories {
@@ -150,6 +150,7 @@ export const pageQuery = graphql`
         localFile {
           childImageSharp {
             fluid(maxWidth: 480) {
+              src
               ...GatsbyImageSharpFluid
             }
           }
