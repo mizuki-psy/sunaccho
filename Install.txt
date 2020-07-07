@@ -41,6 +41,12 @@ Your new Gatsby site has been successfully bootstrapped. Start developing it by 
 
 % npm install --save gatsby-plugin-sitemap
 
+% npm install gatsby-transformer-rehype --save
+
+% npm install --save gatsby-plugin-manifest
+
+% npm install --save gatsby-plugin-offline
+
 found 14 vulnerabilities (12 low, 2 moderate)
   run `npm audit fix` to fix them, or `npm audit` for details
 
