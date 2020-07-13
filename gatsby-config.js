@@ -5,7 +5,7 @@ module.exports = {
 //    siteurl: 'wonderful-pare-f7f6a7.netlify.app',
     summary: '発達障害を持つ女医がこころの病気と健康について語る。',
     description: 'よりすぐりの正しいことを発信して、どこまでいけるのかチャレンジするブログ',
-    image: `/img/profile.png`,
+    image: "/img/profile.png",
     social: {
       twitter: `@mizuki-psy`,
     },
@@ -69,20 +69,38 @@ module.exports = {
         plugins: [],
       },
     },
-    {
-      resolve: 'gatsby-plugin-manifest',
+	{
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'みずき＠精神科医のブログ',
-        short_name: 'みずき＠精神科医',
-        start_url: '/',
-        background_color: '#a098d3', // アプリ起動時の背景色
-        theme_color: '#7068a3', // ブラウザツールバーの色
-        icon: `src/img/utatan.png`,
+        start_url: `/`,
+        lang: `ja`,
+        icon: 'src/img/utatan.png', // This path is relative to the root of the site.
+        include_favicon: false, // This will exclude favicon link tag
+      },
+
+	},
+    'gatsby-plugin-twitter',
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: "UA-160632663-3",
+        // Defines where to place the tracking script - `true` in the head and `false` in the body
+        head: false,
+        // Setting this parameter is optional
+        anonymize: true,
+        // Setting this parameter is also optional
+        respectDNT: true,
+        // Avoids sending pageview hits from custom paths
+        // Delays sending pageview hits on route update (in milliseconds)
+        pageTransitionDelay: 0,
+        // Defers execution of google analytics script after page load
+        defer: false,
+        // Any additional optional fields
+        sampleRate: 5,
+        siteSpeedSampleRate: 10,
       },
     },
-    'gatsby-plugin-offline',　// 必ずgatsby-plugin-manifestの後に定義する
-    'gatsby-plugin-catch-links',
-    'gatsby-plugin-twitter',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
