@@ -25,7 +25,7 @@ export default class IndexPage extends React.Component {
                 </Link>
                 <span> &bull; </span>
                 <small>
-                  {post.date} 
+                  {post.date}
                 </small>
               </p>
               <div>
@@ -33,7 +33,7 @@ export default class IndexPage extends React.Component {
                   記事を読む →
                 </Link>
               </div>
-            </div> 
+            </div>
           ))}
         </div>
       </section>
@@ -58,7 +58,7 @@ export const pageQuery = graphql`
         wordpress_48
       }
     }
-    date(formatString: "MMMM DD, YYYY")
+    date(formatString: "YYYY-MM-DD")
     slug
     path
     featured_media {
