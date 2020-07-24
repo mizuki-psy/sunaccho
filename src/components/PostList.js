@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import NewIcon from './NewIcon'
 
 export default class IndexPage extends React.Component {
   render() {
@@ -25,7 +26,7 @@ export default class IndexPage extends React.Component {
               <br/>
               <p>
                 <Link className="has-text-primary" to={post.path}>
-                  <strong>{post.title}</strong>
+                  <NewIcon date={post.date} /><strong>{post.title}</strong>
                 </Link>
                 <span> &bull; </span>
                 <small>
@@ -81,7 +82,7 @@ export const pageQuery = graphql`
         wordpress_48
       }
     }
-    date(formatString: "MMMM DD, YYYY")
+    date(formatString: "YYYY-MM-DD")
     slug
     path
     featured_media {

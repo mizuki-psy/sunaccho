@@ -1,5 +1,6 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
+import NewIcon from './NewIcon'
 
 const ShortTitleList = () => (
   <StaticQuery
@@ -8,7 +9,7 @@ const ShortTitleList = () => (
        allWordpressPost(filter: {}, limit: 5, sort: {fields: date, order: DESC}) {
           edges {
             node {
-              date(formatString: "MMMM DD, YYYY")
+              date(formatString: "YYYY-MM-DD")
               title
               slug
               path
@@ -25,11 +26,11 @@ const ShortTitleList = () => (
             <li key={post.node.title}>
               <Link to={`/${post.node.slug}/`}>
                 <div class="has-text-right">
-                  <small><span> &bull; </span>
+                  <small><NewIcon date={post.node.date} /><span> &bull; </span>
                   {post.node.date}
                   </small>
                 </div>
-                <div>{post.node.title}　</div>  
+                <div>{post.node.title}　</div>
               </Link>
             </li>
           ))}
