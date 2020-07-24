@@ -3,7 +3,6 @@ import moment from 'moment'
 import Img from 'gatsby-image'
 
 const NewIcon = ({ date }) => {
-  moment.locale('ja')
   const Today= moment(new Date())
   const Posted = moment( date )
   const Diff = Today.diff(Posted, 'days')
