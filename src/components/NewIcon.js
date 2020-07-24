@@ -1,6 +1,5 @@
 import React from 'react'
 import moment from 'moment'
-import Img from 'gatsby-image'
 
 const NewIcon = ({ date }) => {
   const Today= moment(new Date())
