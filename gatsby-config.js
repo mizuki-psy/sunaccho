@@ -69,38 +69,16 @@ module.exports = {
         plugins: [],
       },
     },
-	{
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        start_url: `/`,
-        lang: `ja`,
-        icon: 'src/img/utatan.png', // This path is relative to the root of the site.
-        include_favicon: false, // This will exclude favicon link tag
-      },
-
-	},
+	  {
+       resolve: `gatsby-plugin-manifest`,
+       options: {
+         start_url: `/`,
+         lang: `ja`,
+         icon: 'src/img/utatan.png', // This path is relative to the root of the site.
+         include_favicon: true, // This will exclude favicon link tag
+       },
+  	},
     'gatsby-plugin-twitter',
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        // The property ID; the tracking code won't be generated without it
-        trackingId: "UA-160632663-3",
-        // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: false,
-        // Setting this parameter is optional
-        anonymize: true,
-        // Setting this parameter is also optional
-        respectDNT: true,
-        // Avoids sending pageview hits from custom paths
-        // Delays sending pageview hits on route update (in milliseconds)
-        pageTransitionDelay: 0,
-        // Defers execution of google analytics script after page load
-        defer: false,
-        // Any additional optional fields
-        sampleRate: 5,
-        siteSpeedSampleRate: 10,
-      },
-    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
