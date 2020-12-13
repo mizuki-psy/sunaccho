@@ -18,6 +18,12 @@ module.exports = {
         head: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-adsense`,
+      options: {
+        publisherId: `ca-pub-7562585991699278`
+      },
+    }
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
